@@ -17,12 +17,16 @@ public class Server {
 		
 		
 		try {
+			//서버 소켓 생성
 			serversocket = new ServerSocket();
+			//바인딩
 			serversocket.bind(new InetSocketAddress("0.0.0.0", PORT));
 			System.out.println("[server] server starts....");
 			
 			while(true) {
+				//연결
 				Socket socket = serversocket.accept();
+				//쓰레드 부르기
 				new ServerThread(socket, listwriter).start();
 			}
 			

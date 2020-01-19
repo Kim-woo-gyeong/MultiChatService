@@ -30,7 +30,7 @@ public class ClientSender {
 			String nickname = scanner.nextLine();
 			pw.println("join:" + nickname);
 			
-			new ClientRecieveThread(br,socket);
+			new ClientRecieveThread(br,socket).start();
 			
 			while(true) {
 				System.out.print(">>");

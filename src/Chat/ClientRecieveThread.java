@@ -26,8 +26,9 @@ public class ClientRecieveThread extends Thread {
 			br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
 			pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"),true);
 			
-			while(br!=null) {
+			while(true) {
 				line = br.readLine();
+				
 				System.out.println(line);
 			}
 		}catch(IOException e) {
